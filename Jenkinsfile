@@ -6,7 +6,8 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/muhammadhammad2005/cloud-deployment.git'
+                // Replace 'github-token' with your Jenkins credentials ID if repo is private
+                git branch: 'main', url: 'https://github.com/muhammadhammad2005/cloud-deployment.git', credentialsId: 'github-token'
             }
         }
         stage('Run OPA Policy Check') {
@@ -33,7 +34,7 @@ pipeline {
         stage('Deploy Cloud Resources') {
             steps {
                 echo "Deploying resources..."
-                // Example: sh 'terraform apply -auto-approve'
+                // Add your deployment commands here if needed
             }
         }
     }
@@ -43,4 +44,3 @@ pipeline {
         }
     }
 }
-
