@@ -1,0 +1,9 @@
+{
+  "resource": {
+    "tags": {
+      "environment": "production",
+      "owner": "team-a"
+    }
+  }
+}
+
